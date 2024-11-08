@@ -1,0 +1,107 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #f06, #ffdb58); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-size: 400% 400%; /* Larger background size for smooth animation */
+    animation: gradientBG 10s ease infinite; /* Smooth background animation */
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Style for the countdown container */
+.countdown-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #246859, #c5b0b0); /* Dark gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Countdown Timer Text */
+.countdown-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Timer */
+#timer {
+    font-size: 4em;
+    font-weight: bold;
+    color: #ffcc00;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    animation: countdownPulse 1s infinite;
+}
+
+/* Countdown Timer Animation */
+@keyframes countdownPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 600px) {
+    .countdown-container {
+        font-size: 1.5em;
+        padding: 20px 10px;
+    }
+
+    .countdown-container h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    #timer {
+        font-size: 3em;
+    }
+}
+
+/* Additional adjustments for very small screens (e.g., narrow mobile phones) */
+@media (max-width: 400px) {
+    .countdown-container h2 {
+        font-size: 1.2em;
+    }
+
+    #timer {
+        font-size: 2.5em;
+    }
+}

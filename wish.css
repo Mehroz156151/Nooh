@@ -1,0 +1,112 @@
+/* Apply background image (9.jpeg) to the body */
+body {
+    background-image: url('9.jpg'); /* Reference to the new background image */
+    background-size: cover; /* Ensures the background image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed */
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Image Container for positioning images */
+.image-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 80%; /* Adjust height to fit images properly */
+}
+
+/* Position for left images (top-left corner) */
+.left-images, .right-images {
+    display: flex;
+    flex-direction: column; /* Align images vertically */
+    gap: 15px; /* Space between images */
+    align-items: center; /* Center images horizontally */
+}
+
+/* Style for each image */
+.birthday-image {
+    width: 150px;  /* Set a smaller image width for responsiveness */
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: transform 0.3s ease-in-out, z-index 0s ease;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+/* Hover effect for images */
+.birthday-image:hover {
+    transform: scale(1.5); /* Zoom effect on hover */
+    z-index: 10;  /* Bring the image to the front */
+}
+
+/* Style for the message */
+.message {
+    position: absolute;
+    top: 5%; /* Positioned between the top images */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em; /* Increased font size */
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow */
+    text-align: center;
+    width: 60%; /* Adjust width to fit the text */
+}
+
+/* Style for title in message */
+h1 {
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .birthday-image {
+        width: 100px; /* Smaller image width on mobile */
+    }
+
+    .message {
+        font-size: 1.2em; /* Adjusted font size for smaller screens */
+        top: 30%; /* Adjusted position for mobile screens */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 480px) {
+    .image-container {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        width: 100%; /* Full width on small screens */
+    }
+
+    .birthday-image {
+        width: 80px; /* Further reduce image size on small screens */
+        margin: 0 5px;
+    }
+
+    .message {
+        top: 35%; /* Adjust message position for very small screens */
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

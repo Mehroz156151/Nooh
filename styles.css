@@ -1,0 +1,149 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #f06, #ffdb58); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-size: 400% 400%; /* Larger background size for smooth animation */
+    animation: gradientBG 10s ease infinite; /* Smooth background animation */
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Countdown Container */
+.countdown-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Slightly dark overlay */
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Title of the Countdown */
+.countdown-container h2 {
+    font-size: 2.5em;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    font-size: 4em; /* Adjusted for responsiveness */
+    color: white;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5); /* Dark background for the timer */
+    width: auto;
+    margin: 0 auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* See Surprise Button */
+.surprise-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #24b328;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    opacity: 0.5;
+}
+
+.surprise-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1); /* Increase button size on hover */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); /* Add a shadow effect on hover */
+}
+
+.surprise-button:enabled {
+    opacity: 1;
+}
+
+.surprise-button:disabled {
+    cursor: not-allowed;
+    background-color: gray;
+}
+
+/* Countdown Timer Animation */
+@keyframes countdownPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.countdown-timer {
+    animation: countdownPulse 1s infinite;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 600px) {
+    .countdown-container {
+        padding: 20px 15px;
+        max-width: 90%;
+    }
+
+    .countdown-container h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .countdown-timer {
+        font-size: 2.5em;
+        padding: 15px;
+    }
+
+    .surprise-button {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin-top: 20px;
+    }
+}
+
+/* Additional adjustments for very small screens (e.g., narrow mobile phones) */
+@media (max-width: 400px) {
+    .countdown-container h2 {
+        font-size: 1.2em;
+    }
+
+    .countdown-timer {
+        font-size: 2em;
+    }
+
+    .surprise-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
